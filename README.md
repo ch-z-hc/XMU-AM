@@ -1,4 +1,4 @@
-<details>
+<details open>
 <summary><strong>大一上</strong></summary>
 
 - [力学](%E5%A4%A7%E4%B8%80%E4%B8%8A/%E5%8A%9B%E5%AD%A6/)
@@ -9,7 +9,7 @@
 
 </details>
 
-<details>
+<details open>
 <summary><strong>大一下</strong></summary>
 
 - [健身健美](%E5%A4%A7%E4%B8%80%E4%B8%8B/%E5%81%A5%E8%BA%AB%E5%81%A5%E7%BE%8E/)
@@ -20,7 +20,7 @@
 
 </details>
 
-<details>
+<details open>
 <summary><strong>大二上</strong></summary>
 
 - [C 语言程序设计](%E5%A4%A7%E4%BA%8C%E4%B8%8A/C%20%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/)
@@ -32,7 +32,7 @@
 
 </details>
 
-<details>
+<details open>
 <summary><strong>大二下</strong></summary>
 
 - [数字逻辑](%E5%A4%A7%E4%BA%8C%E4%B8%8B/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91/)
