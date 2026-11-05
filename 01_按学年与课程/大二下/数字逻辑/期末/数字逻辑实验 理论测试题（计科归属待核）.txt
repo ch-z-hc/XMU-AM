@@ -1,0 +1,267 @@
+一、单选题（共28题；共42.0分）
+
+1. 1.5分 1、VerilogHDL中，输入端口悬空时的默认逻辑状态是什么？
+A. 高电平（1）
+B. 高阻状态（z）
+C. 不确定（x）
+D. 低电平（0）
+
+2. 1.5分 2、VerilogHDL中，过程块语句用什么关键字？
+A. function
+B. always
+C. task
+D. initial
+
+3. 1.5分 3、在Verilog中，下面哪个语句用于组合逻辑描述？
+A. initial
+B. always @(*)
+C. task
+D. always @(posedge clk)
+
+4. 1.5分 4、在VerilogHDL中，reg类型的信号用于表示什么？
+A. 模块的输入
+B. 组合逻辑的输出
+C. 模块的输出
+D. 时序逻辑的输出
+
+5. 1.5分 5、VerilogHDL中，寄存器类型（reg）通常用于表示什么？
+A. 常量
+B. 触发器
+C. 变量
+D. 连线
+
+6. 1.5分 6、VerilogHDL中，case语句的特点是什么？
+A. case语句的表达式值位宽可以不同
+B. case语句可以有多个default项
+C. case语句不需要endcase结束
+D. case语句的分支表达式值必须互不相同
+
+7. 1.5分 7、VerilogHDL中，forever语句的用途是什么？
+A. 用于条件判断
+B. 产生周期性波形
+C. 用于函数定义
+D. 用于循环结构
+
+8. 1.5分 8、在VerilogHDL中，下面哪个运算符用于逻辑与操作？
+A. !
+B. &&
+C. ||
+D. &
+
+9. 1.5分 9、在VerilogHDL中，assign语句用于实现什么？
+A. 模块调用
+B. 组合逻辑
+C. 信号赋值
+D. 时序逻辑
+
+10. 1.5分 10、VerilogHDL中，线网型数据类型（wire）常用来表示什么？
+A. 常量
+B. 组合逻辑信号
+C. 变量
+D. 时序逻辑信号
+
+11. 1.5分 11、VerilogHDL中，拼接运算符"{}"用于什么？
+A. 数组拼接
+B. 位拼接
+C. 列表拼接
+D. 字符串拼接
+
+12. 1.5分 12、在VerilogHDL中，以下哪种情况可能导致仿真和综合结果不一致？
+A. 不完整的敏感信号列表
+B. 使用阻塞赋值（=）
+C. 不完整的分支和赋值
+D. 使用非阻塞赋值（<=）
+
+13. 1.5分 13、VerilogHDL中，综合的概念是什么？
+A. 将HDL描述转换为行为级描述
+B. 将门级网表转换为HDL描述
+C. 将HDL描述转换为RTL级描述
+D. 将HDL描述转换为门级网表
+
+14. 1.5分 14、在VerilogHDL中，以下哪种方法可以确保always块中的信号在所有情况下都被赋值？
+A. 在always块开始时给所有信号赋默认值
+B. 使用阻塞赋值（=）
+C. 使用if-else语句
+D. 使用非阻塞赋值（<=）
+
+15. 1.5分 15、VerilogHDL中，case语句的分支项格式是什么？
+A. condition -> statement
+B. condition : statement
+C. condition --> statement
+D. condition => statement
+
+16. 1.5分 16、在Verilog中，下面哪个关键字用于定义用户自定义函数？
+A. module
+B. function
+C. initial
+D. task
+
+17. 1.5分 17、VerilogHDL中，函数定义用什么关键字？
+A. module
+B. function
+C. endmodule
+D. task
+
+18. 1.5分 18、VerilogHDL中，if语句的使用范围是什么？
+A. 只能在函数中使用
+B. 可以在任何地方使用
+C. 只能在任务中使用
+D. 只能在过程块中使用
+
+19. 1.5分 19、下面关于组合逻辑电路的说法正确的是？
+A. 不存在反馈回路
+B. 存在反馈回路
+
+20. 1.5分 20、VerilogHDL中，条件语句if (a>b)的括号中可以是什么类型的表达式？
+A. 算术表达式
+B. 逻辑表达式
+C. 字符串表达式
+D. 关系表达式
+
+21. 1.5分 21、在VerilogHDL中，下面哪个关键字用于定义一个参数？
+A. wire
+B. parameter
+C. reg
+D. localparam
+
+22. 1.5分 22、VerilogHDL中，赋值语句"b <= a"属于什么类型的赋值？
+A. 条件赋值
+B. 阻塞赋值
+C. 循环赋值
+D. 非阻塞赋值
+
+23. 1.5分 23、VerilogHDL中，阻塞赋值和非阻塞赋值的区别是什么？
+A. 阻塞赋值和非阻塞赋值没有区别
+B. 阻塞赋值立即执行，非阻塞赋值在块结束时执行
+C. 阻塞赋值用于函数，非阻塞赋值用于任务
+D. 阻塞赋值用于时序逻辑，非阻塞赋值用于组合逻辑
+
+24. 1.5分 24、VerilogHDL中，模块的内部信号用什么关键字声明？
+A. parameter
+B. wire
+C. integer
+D. reg
+
+25. 1.5分 25、在VerilogHDL中，以下哪种方法可以避免组合电路中的竞争冒险？
+A. 确保敏感信号列表完整
+B. 使用阻塞赋值（=）
+C. 使用锁存器
+D. 使用非阻塞赋值（<=）
+
+26. 1.5分 26、VerilogHDL中，条件语句的使用范围是什么？
+A. 只能在函数中使用
+B. 可以在任何地方使用
+C. 只能在任务中使用
+D. 只能在initial和always块中使用
+
+27. 1.5分 27、Vivado中，观察被测模块响应的方法是什么？
+A. $strobe
+B. $monitor
+C. $time
+D. $display
+
+28. 1.5分 28、VerilogHDL中，赋值语句"b = a"属于什么类型的赋值？
+A. 条件赋值
+B. 阻塞赋值
+C. 循环赋值
+D. 非阻塞赋值
+
+
+二、多选题（共16题；共32.0分）
+
+1. 2.0分 1、VerilogHDL中，位运算符包括哪些？
+A. |
+B. ~
+C. ^
+D. &
+
+2. 2.0分 2、以下哪些是VerilogHDL中描述时序逻辑时需要注意的事项？
+A. 避免使用阻塞赋值
+B. 确保敏感信号列表完整
+C. 避免使用锁存器
+D. 使用非阻塞赋值
+
+3. 2.0分 3、VerilogHDL中，条件语句的类型有哪些？
+A. casez
+B. if-else
+C. casex
+D. case
+
+4. 2.0分 4、VerilogHDL中，综合的模型级别有哪些？
+A. 门级
+B. 行为/算法级
+C. 开关级
+D. 寄存器传输级
+
+5. 2.0分 5、VerilogHDL中，模块的例化时可以使用哪些信号类型？
+A. parameter
+B. wire
+C. integer
+D. reg
+
+6. 2.0分 6、VerilogHDL中，模块内部信号的类型有哪些？
+A. parameter
+B. wire
+C. integer
+D. reg
+
+7. 2.0分 7、VerilogHDL中，模块的例化语句可以用于哪些情况？
+A. 电路复制
+B. 模块调用
+C. 信号连接
+D. 层次化设计
+
+8. 2.0分 8、VerilogHDL中，常见的数据类型有哪些？
+A. wire
+B. real
+C. parameter
+D. integer
+E. reg
+
+9. 2.0分 9、以下哪些是VerilogHDL中描述组合逻辑时需要注意的事项？
+A. 避免使用锁存器
+B. 确保敏感信号列表完整
+C. 避免使用时序逻辑语句
+D. 避免使用非阻塞赋值
+
+10. 2.0分 10、VerilogHDL中，模块的内部信号可以是哪些类型的变量？
+A. parameter
+B. wire
+C. integer
+D. reg
+
+11. 2.0分 11、VerilogHDL中，循环语句的类型有哪些？
+A. repeat
+B. for
+C. forever
+D. while
+
+12. 2.0分 12、VerilogHDL中，模块的逻辑功能定义方式有哪些？
+A. function
+B. assign
+C. task
+D. always
+
+13. 2.0分 13、在Verilog中，下面哪些是常用的仿真控制语句？
+A. repeat
+B. initial
+C. fork-join
+D. always
+
+14. 2.0分 14、在VerilogHDL中，以下哪些运算符用于表示逻辑运算？
+A. ^
+B. &
+C. ~
+D. |
+
+15. 2.0分 15、VerilogHDL中，块语句的类型有哪些？
+A. 命名块
+B. 顺序块
+C. 嵌套块
+D. 并行块
+
+16. 2.0分 16、VerilogHDL中，模块的端口类型有哪些？
+A. inout
+B. input
+C. reg
+D. output
