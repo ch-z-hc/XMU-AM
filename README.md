@@ -1,7 +1,3 @@
-个人总结、原有收藏的往年试卷与教材。
-
-[历史收藏补入清单](补入文件清单.md) · [资料来源](资料来源.md)
-
 <details open>
 <summary><strong>大一上</strong></summary>
 
