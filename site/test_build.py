@@ -1,8 +1,22 @@
 import unittest
+import re
+import subprocess
+from pathlib import Path
 from build import catalog, LOCAL_LIMIT
 
 
 class CatalogTests(unittest.TestCase):
+    def test_tracked_exam_names_are_normalized(self):
+        paths = subprocess.check_output(['git', 'ls-files', '-z'], cwd=Path(__file__).resolve().parents[1]).decode().split('\0')
+        exams = [p for p in paths if p.endswith('.pdf') and p.split('/')[0].startswith('大') and any(s in p.split('/') for s in ['期中', '期末'])]
+        self.assertTrue(exams)
+        for path in exams:
+            name = Path(path).name
+            with self.subTest(path=path):
+                self.assertIsNone(re.search(r'[（）()]|级|学院|第[一二三123]学期|试题|卷|\bv\d', name))
+                self.assertRegex(name, r'^(?:\d{4}(?:-\d{4})? .+(?:期中|期末)|.+(?:期中|期末) [A-Z])\.pdf$')
+        self.assertIn('大二下/面向对象程序设计/期末/C++ 期末 C.pdf', exams)
+
     def entry(self, path, size=100):
         return {'type': 'blob', 'path': path, 'size': size, 'sha': 'a' * 40}
 
