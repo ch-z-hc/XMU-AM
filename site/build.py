@@ -8,7 +8,6 @@ from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
 TERMS = ['大一上', '大一下', '大二上', '大二下', '大三上', '大三下', '大四上', '大四下']
-EXTENSIONS = {'.pdf', '.md', '.txt', '.docx', '.doc', '.ppt', '.pptx', '.rar', '.zip', '.c', '.cpp'}
 LOCAL_LIMIT = 16 * 1024 * 1024
 
 
@@ -18,12 +17,12 @@ def catalog(tree, revision):
         path = item['path']
         parts = path.split('/')
         suffix = Path(path).suffix.lower()
-        if item['type'] != 'blob' or len(parts) < 3 or parts[0] not in TERMS or suffix not in EXTENSIONS:
+        if item['type'] != 'blob' or len(parts) < 3 or parts[0] not in TERMS or suffix != '.pdf':
             continue
         category = parts[2] if len(parts) > 3 else '笔记'
         kind = '试卷' if category in {'期中', '期末', '考试资料（期次待核）'} else ('教材' if category == '教材' else '笔记')
         # Directories reflect content review; format and title do not determine kind.
-        local = suffix == '.pdf' and item['size'] <= LOCAL_LIMIT
+        local = item['size'] <= LOCAL_LIMIT
         url_path = quote(path, safe='/')
         local_path = f"files/{item['sha']}{suffix}" if local else None
         entries.append({
