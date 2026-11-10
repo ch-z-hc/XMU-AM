@@ -1,0 +1,23 @@
+name: Build course library
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: course-library-build
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check catalog rules
+        run: python3 site/test_build.py
+      - name: Build course catalog
+        run: python3 site/build.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: course-library
+          path: site/dist

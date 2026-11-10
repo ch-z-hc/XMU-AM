@@ -69,7 +69,6 @@ def main():
     out.mkdir()
     for name in ['index.html', 'style.css', 'app.js']:
         shutil.copyfile(ROOT / 'site' / name, out / name)
-    (out / '.nojekyll').touch()
     (out / 'catalog.json').write_text(json.dumps({'terms': [t for t in TERMS if any(e['term'] == t for e in entries)], 'files': entries}, ensure_ascii=False), encoding='utf-8')
     total = 0
     for entry in entries:
@@ -89,7 +88,7 @@ def main():
             shutil.copyfile(source, target)
         total += entry['size']
     if total > 900 * 1024 * 1024:
-        raise ValueError('Pages artifact exceeds the size budget')
+        raise ValueError('Static site exceeds the size budget')
     print(f'{len(entries)} materials, {len(set((e["term"], e["course"]) for e in entries))} courses; PDFs {total / 1024**2:.1f} MiB')
 
 

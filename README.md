@@ -1,4 +1,4 @@
-[网页版](https://chzhc.cn/xmu-am/) · [GitHub Pages](https://ch-z-hc.github.io/XMU-AM/)
+[网页版](https://chzhc.cn/xmu-am/)
 
 本项目收录厦门大学课程资料与试卷。外校试卷不收录；离散数学中 3 套学校与年份未能确认的资料按 A、B、C 编号暂保留，字母仅用于区分文件，不作为已确认的厦大历年真题。
 
