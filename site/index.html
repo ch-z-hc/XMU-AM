@@ -3,27 +3,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#f7f8fa">
+  <meta name="theme-color" content="#ffffff">
   <meta name="description" content="厦门大学课程资料：历年试卷、教材与个人笔记。按学期和课程查找、预览与下载。">
   <title>XMU-AM · 课程资料</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%231d4a78'/%3E%3Cpath d='M10 11h8l2 3 2-3h8v19h-8l-2 2-2-2h-8z' fill='none' stroke='white' stroke-width='2'/%3E%3Cpath d='M20 14v18' stroke='white' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="icon" href="/assets/logo.svg">
+  <link rel="stylesheet" href="/guestbook/fonts.css">
   <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">跳转到资料列表</a>
-  <header class="topbar">
-    <a class="brand" href="./" aria-label="XMU-AM 首页">XMU<span>·</span>AM</a>
+  <header class="topbar"><div class="topbar-inner">
+    <a class="home-link" href="https://chzhc.cn/" aria-label="返回主站"><img src="/assets/logo.svg" alt="chzhc" width="43" height="30"></a>
+    <span class="nav-divider" aria-hidden="true"></span>
+    <a class="brand" href="./" aria-label="XMU-AM 首页">XMU-AM</a>
     <a class="repo-link" href="https://github.com/ch-z-hc/XMU-AM" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
-  </header>
+  </div></header>
   <div class="layout">
     <aside class="sidebar" aria-label="学期导航">
-      <div class="nav-label">课程目录</div>
+      <h2 class="nav-label">学期</h2>
       <nav id="terms" aria-label="学期"></nav>
       <a class="source-link" href="https://github.com/ch-z-hc/XMU-AM/tree/main/%E6%BA%90%E6%96%87%E4%BB%B6" target="_blank" rel="noopener">源文件 <span aria-hidden="true">↗</span></a>
     </aside>
     <main id="main">
-      <div class="page-heading"><div><p class="eyebrow">厦门大学</p><h1>课程资料</h1></div><p id="summary" class="summary"></p></div>
+      <div class="page-heading"><h1>课程资料</h1><p id="summary" class="summary"></p></div>
       <form class="search" role="search" id="search-form">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
         <label class="sr-only" for="query">搜索课程、年份或文件名</label>
