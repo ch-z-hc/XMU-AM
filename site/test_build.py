@@ -15,7 +15,14 @@ class CatalogTests(unittest.TestCase):
             with self.subTest(path=path):
                 self.assertIsNone(re.search(r'[（）()]|级|学院|第[一二三123]学期|试题|卷|\bv\d', name))
                 self.assertRegex(name, r'^(?:\d{4}(?:-\d{4})? .+(?:期中|期末)|.+(?:期中|期末) [A-Z])\.pdf$')
-        self.assertIn('大二下/面向对象程序设计/期末/C++ 期末 C.pdf', exams)
+        series = {}
+        for path in exams:
+            match = re.match(r'^(.*(?:期中|期末)) ([A-Z])\.pdf$', path)
+            if match:
+                series.setdefault(match[1], []).append(match[2])
+        for prefix, letters in series.items():
+            with self.subTest(series=prefix):
+                self.assertEqual(sorted(letters), [chr(ord('A') + i) for i in range(len(letters))])
 
     def entry(self, path, size=100):
         return {'type': 'blob', 'path': path, 'size': size, 'sha': 'a' * 40}
@@ -59,8 +66,8 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(row['format'], 'PDF')
         self.assertEqual(row['kind'], '笔记')
 
-    def test_reviewed_unix_study_aid_is_a_note(self):
-        row = catalog([self.entry('大三上/UNIX 系统编程/笔记/UNIX 期中开卷速查.pdf')], 'revision')[0]
+    def test_reviewed_study_aid_is_a_note(self):
+        row = catalog([self.entry('大二下/面向对象程序设计/笔记/C++ 期末复习.pdf')], 'revision')[0]
         self.assertEqual(row['kind'], '笔记')
 
 

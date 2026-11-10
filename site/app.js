@@ -106,6 +106,12 @@ function compareFiles(a, b) {
     const year = file => Number(file.name.match(/^\d{4}/)?.[0] || 0);
     const difference = year(b) - year(a);
     if (difference) return difference;
+    // Archive letters are sequential identifiers, not dates.
+    const aSeries = a.name.match(/^(.*(?:期中|期末)) ([A-Z])$/);
+    const bSeries = b.name.match(/^(.*(?:期中|期末)) ([A-Z])$/);
+    if (aSeries && bSeries && aSeries[1] === bSeries[1]) {
+      return collator.compare(aSeries[2], bSeries[2]);
+    }
   }
   return collator.compare(b.name, a.name);
 }
