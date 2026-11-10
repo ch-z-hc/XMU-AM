@@ -1,0 +1,114 @@
+\providecommand\ExamFontPath{../../../字体/}
+\documentclass[fontset=exam]{exam-zh}
+\usepackage{longtable,booktabs,array,calc,multirow,fvextra}
+\usepackage[normalem]{ulem}
+\providecommand{\hl}[1]{#1}
+\providecommand{\ul}[1]{\uline{#1}}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,fontsize=\small}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcommand{\pandocbounded}[1]{#1}
+\setlength{\emergencystretch}{3em}
+\setlength{\tabcolsep}{2pt}
+\examsetup{page/size=a4paper}
+\title{UNIX 期中试卷}
+\subject[9em]{UNIX 系统编程}
+\begin{document}
+\maketitle
+\fancyfoot[C]{第 \thepage 页（共 \pageref*{LastPage} 页）}
+\pdfbookmark[1]{一、}{section1}
+
+\par\medskip{\heiti
+
+一、
+
+\par}\smallskip
+
+1、如果两个常规文件的长度一样，那么它们是否占用相同大小的磁盘空间？为什么？
+
+2、一个进程可以给其他进程中指定的线程发送信号吗？线程可以拥有自己的信号处理程序吗？线程可以有自己的信号屏蔽码吗？
+
+3、使用系统调用 read 和 write 读/写磁盘文件时，是否一定会访问磁盘驱动器？为什么？
+
+4、如果超级用户的一个文件的设置权限是，文件的所有者可以读写，但是同组及其他用户均不可以读写，那么普通进程是否就不能读写这个文件？为什么？
+
+5、当创建一个进程时，其实际用户 ID 与有效用户 ID 是否总是一致？如果不是，那么在什么情况下它们是不同的？
+
+6、在作业控制中，进程组和进程对话有什么用途？
+
+7、如何在不执行相关的信号处理函数的前提下清楚（wzy 备注：错别字？可能是清除？）一个未决信号？
+
+8、为什么要避免进程僵尸？请给出两种避免进程僵尸的方法？
+
+9、当分别调用函数 exit 和 exit（此处有错。应该是 exit 和\_exit）终止进程时，它们会关闭打开的文件吗？它们会关闭打开的标准 I/O 流吗？
+
+10、什么是系统调用？是否有在 C 语言标准里定义的库函数是系统调用？
+
+11、在进程中删除一个文件后，能否打开这个文件？如果文件已经打开，能否继续访问这个文件？
+
+12、子进程继承父进程打开的文件吗？继承父进程对信号的处理方式吗？继承父进程的信号吗？
+
+13、在操作系统编程环境中，程序中需要互斥的代码叫什么？如何识别程序中需要互斥的代码？
+
+14、如何判断一个函数是否是不可重入的？
+
+15、如果一个进程有 5 个线程，那么它创建的子进程最多有几个线程？最少呢？
+
+\pdfbookmark[1]{二、程序在书上第9页（此处指的是第9页下方到第10页上方的程序）}{section18}
+
+\par\medskip{\heiti
+
+二、程序在书上第 9 页（此处指的是第 9 页下方到第 10 页上方的程序）
+
+\par}\smallskip
+
+1、子进程的进程 ID 等于 0 吗？
+
+2、子进程执行的程序能否带参数？
+
+3、程序语句 exit（12）（此处印刷错误，应该是 exit 127）在什么情况下被执行？子进程正常结束时的返回值一定是 127 吗？
+
+4、程序中语句 waitpid 起什么作用？如果不用，则可能造成什么后果？
+
+\begin{verbatim}
+#include "apue.h"
+#include<sys/wait.h>
+int main(void)
+{
+    char buf [MAXLINE];
+    pid_t pid;
+    int status;
+    printf("%% ");
+    while(fgets(buf, MAXLINE, stdin)!=NULL) {
+        if(buf[strlen(buf)-1] == '\n')
+            buf[strlen(buf)-1] = 0;/*replace newline with null*/
+        if((pid = fork()) < 0) {
+            err_sys("fork error");
+        } else if(pid == 0) {
+            execlp(buf, buf, (char *)0);
+            err_ret("couldn't execute: %s", buf);
+            exit(127);
+        }
+        /*parent*/
+        if((pid = waitpid(pid, &status, 0)) < 0)
+            err_sys("waitpid error");
+        printf("%% ");
+    }
+    exit(0);
+}
+\end{verbatim}
+
+\pdfbookmark[1]{三、p99 4-7（此处错误，全书只有P106的代码出现了一次dopath）}{section49}
+
+\par\medskip{\heiti
+
+三、p99 4-7（此处错误，全书只有 P106 的代码出现了一次 dopath）
+
+\par}\smallskip
+
+1、dopath 函数返回值的有什么意义？
+
+2、程序遍历目录树的次序
+
+3、在 dopath 函数中，语句（不含引号）``ptr{[}-1{]}=0''起什么作用？是否可以省略？
+
+\end{document}

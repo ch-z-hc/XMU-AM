@@ -1,0 +1,89 @@
+\providecommand\ExamFontPath{../../../字体/}
+\documentclass[fontset=exam]{exam-zh}
+\usepackage{longtable,booktabs,array,calc,multirow,fvextra}
+\usepackage[normalem]{ulem}
+\providecommand{\hl}[1]{#1}
+\providecommand{\ul}[1]{\uline{#1}}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,fontsize=\small}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcommand{\pandocbounded}[1]{#1}
+\setlength{\emergencystretch}{3em}
+\setlength{\tabcolsep}{2pt}
+\examsetup{page/size=a4paper}
+\title{厦门大学 2013 级期中考试 A 卷}
+\subject[4em]{计算方法}
+\begin{document}
+\maketitle
+\fancyfoot[C]{第 \thepage 页（共 \pageref*{LastPage} 页）}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  已知下列数值表，求符合表值的插值多项式，并给出插值余项的表达式。
+\end{enumerate}
+
+\begin{center}\begin{tabular}{c|ccc}$x_i$&0&1&2\\$y_i$&2&1&2\\$y_i^{\prime}$&$-2$&$-1$&\\$y_i^{\prime\prime}$&$-10$&&\end{tabular}\end{center}
+
+2. 设\(x_{0},x_{1},\cdots,x_{n}\)为\(n + 1\)个互异的插值节点, \(l_{i}(x),(i = 0,1,\cdots,n)\)为拉格朗日插值基函数.证明:
+
+\[{\sum\limits_{i = 0}^{n}{l_{i}(0)x_{i}^{k}}} = \left\{ \begin{matrix}
+1 & {k = 0} \\
+0 & {k = 1,2,\cdots,n} \\
+{{( - 1)}^{n}x_{0}x_{1}\cdots x_{n}} & {k = n + 1}
+\end{matrix} \right.\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+\end{enumerate}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1980}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1993}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2008}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2009}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2009}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+x\textsubscript{i}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+4
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+y\textsubscript{i} & 4 & 10 & 18 & 26 \\
+\end{longtable}
+
+用\(y = c_{0} + c_{1}x + c_{2}x^{2}\)拟合上述数据，采用正交多项式方法求解。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\item
+  求\(f(x) = x^{4} + 3x^{3} - 1\)在区间{[}0,1{]}上的三次最佳一致逼近多项式。
+\item
+  确定求积公式
+\end{enumerate}
+
+\[{\int_{x_{0}}^{x_{1}}{(x - x_{0})f(x)dx}} = h^{2}\lbrack Af(x_{0}) + Bf(x_{1})\rbrack + h^{3}\lbrack Cf'(x_{0}) + Df'(x_{1})\rbrack + R(f)\]
+
+中的系数\emph{A, B, C, D}, 使其代数精度尽量高，并给出\emph{R}(\emph{f})的表达式。其中\(h = x_{1} - x_{0}\)。
+
+6. \(\left\{ \phi_{n}(x) \right\}\)是{[}a, b{]}上带权ρ(x)的正交多项式序列，x\textsubscript{i} (i=0, 1, \ldots, n)是\(\phi_{n + 1}(x)\)的零点，\(l_{i}(x)(i = 0,1,...,n)\)是以\(\left\{ x_{i} \right\}\)为节点的拉格朗日插值基函数。
+
+\({\int_{a}^{b}{\rho(x)f(x)dx}} \approx {\sum\limits_{k = 0}^{n}{A_{k}f(x_{k})}}\)为高斯求积公式。证明：
+
+\[{\sum\limits_{k = 0}^{n}{\int_{a}^{b}{\rho(x)l_{k}^{2}(x)dx}}} = {\int_{a}^{b}{\rho(x)dx}}.\]
+
+7．用龙贝格方法计算\(\int_{0.3}^{0.8}{\frac{x^{3} + sinx}{x}dx,}\)使其误差不超过\(0.1\text{x}10^{- 4}.\)
+
+\end{document}

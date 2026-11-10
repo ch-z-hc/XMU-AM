@@ -1,0 +1,98 @@
+\providecommand\ExamFontPath{../../../字体/}
+\documentclass[fontset=exam]{exam-zh}
+\usepackage{longtable,booktabs,array,calc,multirow,fvextra}
+\usepackage[normalem]{ulem}
+\providecommand{\hl}[1]{#1}
+\providecommand{\ul}[1]{\uline{#1}}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,fontsize=\small}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcommand{\pandocbounded}[1]{#1}
+\setlength{\emergencystretch}{3em}
+\setlength{\tabcolsep}{2pt}
+\examsetup{page/size=a4paper}
+\title{厦门大学 2021 年 期末考试 A 卷}
+\subject[4em]{离散数学}
+\begin{document}
+\maketitle
+\fancyfoot[C]{第 \thepage 页（共 \pageref*{LastPage} 页）}
+\pdfbookmark[1]{一、(4分)设A=a, b, c, d, e，R=<a, b>, <b, a>, <a, c>, <c, d>, <e,}{section1}
+
+一、(4 分)设 A=\{\emph{a, b}, \emph{c}, \emph{d}, \emph{e}\}，R=\{\textless{}\emph{a, b}\textgreater, \textless{}\emph{b, a}\textgreater, \textless{}\emph{a, c}\textgreater, \textless{}\emph{c, d}\textgreater, \textless{}\emph{e, d}\textgreater\}，画出 R 及它的闭包：
+
+r(R)，s(R), t(R)的关系图。
+
+\pdfbookmark[1]{二、（5分）设R是N times N上的二元关系，forall <a, b>，<c, d>in N times N：}{section3}
+
+二、（5 分）设 R 是\(N \times N\)上的二元关系，\(\forall\) \textless{}\emph{a, b}\textgreater，\textless{}\emph{c, d}\textgreater{}\(\in N \times N\)：
+
+\textless{}\emph{a, b}\textgreater{} R \textless{}\emph{c, d}\textgreater{}\(\Leftrightarrow\)b=d
+
+问二元关系 R 具有什么性质？（自反？反自反？对称？反对称？传递？）并说明理由。
+
+\pdfbookmark[1]{三、(6分)某人给六个朋友写信，邀请他们来家中聚会。请柬和信封交由助手去处理。粗心的}{section6}
+
+三、(6 分)某人给六个朋友写信，邀请他们来家中聚会。请柬和信封交由助手去处理。粗心的
+
+助手把请柬全部装错信封，请问助手会有多少种装错的可能呢？
+
+\pdfbookmark[1]{四、（10分）画出1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12在整除关系下的哈斯图，并求B}{section8}
+
+四、（10 分）画出\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12\}在整除关系下的哈斯图，并求 B=｛1，2，3｝
+
+的极大元，极小元，最大元，最小元，上界，最小上界，下界，最大下界。
+
+\pdfbookmark[1]{五、（10分）下面给出6个偏序集的哈斯图：}{section10}
+
+五、（10 分）下面给出 6 个偏序集的哈斯图：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  判断其中哪些是格，哪些不是格。如果不是格，说明理由；
+\item
+  对那些是格的判断其是否为分配格，有补格，布尔格，不是的话，说明理由。
+\end{enumerate}
+
+\pdfbookmark[1]{六、（9分）设S=Q times Q，*为S上的二元运算，forall <a, b>，<x, y>in S：}{section12}
+
+六、（9 分）设 S=\(Q \times Q\)，*为 S 上的二元运算，\(\forall\) \textless{}\emph{a, b}\textgreater，\textless{}\emph{x, y}\textgreater{}\(\in S\)：
+
+\textless{}\emph{a, b}\textgreater{} * \textless{}\emph{x, y}\textgreater{}\(\Leftrightarrow\)\textless{}\emph{ax, ay+b}\textgreater{}
+
+(1) *运算在 S 上是否满足交换律，结合律，幂等律，并说明原因？
+
+(2) *运算是否有单位元、零元？如果有，请指出，并求 S 中所有可逆元素的逆元。
+
+\pdfbookmark[1]{七、（15分）按要求画出下面各图}{section16}
+
+七、（15 分）按要求画出下面各图
+
+（1）画一个自补图；
+
+（2）画一个自对偶图；
+
+（3）画一个竞赛图；
+
+（4）画一个点连通度为 1，边连通度为 2，最小度为 3 的图。
+
+（5）画一个 6 个顶点的极大平面图。
+
+\pdfbookmark[1]{八、（5分）求有k片叶子的二叉正则树的顶点数。}{section22}
+
+八、（5 分）求有 k 片叶子的二叉正则树的顶点数。
+
+\pdfbookmark[1]{九、（共36分）回答下面几个关于彼得森图的问题：}{section23}
+
+九、（共 36 分）回答下面几个关于彼得森图的问题：
+
+（3 分）（1）画出彼得森图。
+
+（15 分）（2）判断彼得森图是否是欧拉图，哈密顿图，平面图，并说明原因。
+
+（10 分）（3）求彼得森图的点色数和边色数，并给出染色方案。
+
+（8 分）（4）求彼得森图的点独立数\(\beta_{0}\)，边独立数\(\beta_{1}\)，点覆盖数\(\alpha_{0}\)，边覆盖数\(\alpha_{1}\)，并
+
+给出一个最大点独立集，一个最大边独立集，一个最小点覆盖，一个最小边覆盖。
+
+\end{document}

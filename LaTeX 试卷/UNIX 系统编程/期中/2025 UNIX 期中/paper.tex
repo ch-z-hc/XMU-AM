@@ -1,0 +1,70 @@
+\providecommand\ExamFontPath{../../../字体/}
+\documentclass[fontset=exam]{exam-zh}
+\usepackage{longtable,booktabs,array,calc,multirow,fvextra}
+\usepackage[normalem]{ulem}
+\providecommand{\hl}[1]{#1}
+\providecommand{\ul}[1]{\uline{#1}}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,fontsize=\small}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcommand{\pandocbounded}[1]{#1}
+\setlength{\emergencystretch}{3em}
+\setlength{\tabcolsep}{2pt}
+\examsetup{page/size=a4paper}
+\title{厦门大学 2025 年 期中考试}
+\subject[9em]{UNIX 系统编程}
+\begin{document}
+\maketitle
+\fancyfoot[C]{第 \thepage 页（共 \pageref*{LastPage} 页）}
+1. 每一个文件都有一个所有者和组所有者，所有者由 stat 结构中的 st\_uid 成员表示，组所有者则用 st\_gid 表示。
+
+2. UNIX 讲一个文件的内容复制到另一个文件中使用什么方法？
+
+3. 如果一个可执行程序被设置了``粘住位''，那么在该程序第一次被执行并结束时，其程序正文部分的一个副本仍被保存在交换区，这使得下次执行时能够较快的将其装入内存。
+
+4. 一个系统中可以有多个 ID 为 0 的用户 。
+
+6. UNIX 内核提供的时间以数据类型 time\_t 表示。
+
+7. 对于目录的读权限和执行权限的意义相同么？为什么？
+
+8. 为了在一个目录中创建一个新文件，只需对该目录具有写权限。
+
+9. 为了删除一个现有文件，必须对包含该文件的目录具有写权限和执行权限。而对该文件本身则不需要任何权限。
+
+11. 什么是不带缓冲的 I/O？
+
+12. Unix 中，时钟时间是什么？
+
+13. Unix 中修改密码需要访问到哪些文件？
+
+14. 绝对路径和相对路径的区别？
+
+15 .（称为点）和 ..（称为点一点）分别指什么？
+
+16．对某个目录具有访问权限的任意用户都可以读取该目录。
+
+17. 若我们想在某个目录下执行 ls 命令，需要对这个目录有什么权限？
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+18. Shell 是什么？
+
+19. 空洞文件需要在磁盘上占用存储区。
+
+\hl{之后都是看程序写结果/这个程序在干嘛的题（10 分到 12 分）有六道题}主播只记得 5 个了
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \hl{P5 图}1.3 代码，涉及知识点读目录
+\item
+  P135 图 4.24 getcwd 相关代码
+\item
+  Lseek、创建空洞、read、write 相关代码（有点像 P9 图 1.4 的复杂版）
+\item
+  P101 图 4.8 及下面的输出示例 access、open、faccess 的使用
+\item
+  又是一个和 read 和 write 相关的题，原型是 P9 图 1.4【将标准输入复制到输出】
+\end{enumerate}
+
+\end{document}

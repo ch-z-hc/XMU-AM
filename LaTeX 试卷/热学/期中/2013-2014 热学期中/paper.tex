@@ -1,0 +1,93 @@
+\providecommand\ExamFontPath{../../../字体/}
+\documentclass[fontset=exam]{exam-zh}
+\usepackage{longtable,booktabs,array,calc,multirow,fvextra}
+\usepackage[normalem]{ulem}
+\providecommand{\hl}[1]{#1}
+\providecommand{\ul}[1]{\uline{#1}}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{breaklines=true,fontsize=\small}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcommand{\pandocbounded}[1]{#1}
+\setlength{\emergencystretch}{3em}
+\setlength{\tabcolsep}{2pt}
+\examsetup{page/size=a4paper}
+\title{厦门大学 2013—2014 年 期中考试}
+\subject[4em]{热学}
+\begin{document}
+\maketitle
+\fancyfoot[C]{第 \thepage 页（共 \pageref*{LastPage} 页）}
+1.（15 分）
+
+一气瓶装有氧气（可视为理想气体），瓶内压强为 2atm，温度为 27\textsuperscript{0}C。
+
+（1）求瓶内氧气的密度（单位体积的氧气质量）；
+
+（2）若将氧气瓶浸泡在温度为 17\textsuperscript{0}C 的水中，问当达到热平衡时，瓶内压强为多少？
+
+2.（18 分）
+
+体积为 20 升的容器中装有 64 克氧气，其压强为 2atm。设氧气可视为理想气体，氧分子可视为刚性分子。求：
+
+（1）容器中单位体积的分子数；
+
+（2）每个分子的平均平动动能和平均转动动能；
+
+（3）分子的平均速率；
+
+（4）分子运动的平均自由程。（设氧分子的有效直径\(d = 3.6 \times 10^{- 10}m\)）
+
+3.（15 分）
+
+容器中储存有由 2mol 氧气（O\textsubscript{2}）和 3mol 氦气（He）组成的混合理想气体，系统压强为\emph{p}＝1.38×10\textsuperscript{5}Pa，温度\emph{t}＝127\textsuperscript{0}C。设氧分子可视为刚性分子。求：
+
+（1）系统的内能；
+
+（2）系统的定容摩尔热容。
+
+4．（18 分）
+
+某一气体系统含有\emph{N}个气体分子，体积为\emph{V}，每个分子质量为\emph{m}。假设分子速率分布函数为
+
+\[f(v) = \left\{ \begin{matrix}
+{Cv(v_{0} - v)\quad(0 \leq v \leq v_{0})} \\
+{0\;\;(v > v_{0})}
+\end{matrix} \right.\]
+
+其中\(v_{0}\)为已知量，\emph{C}为归一化常数。忽略粒子间相互作用。求：
+
+（1）\emph{C}=?；
+
+（2）速率在\(\left. 0 \right.\sim(3/4)v_{0}\)之间的分子数；
+
+（3）分子的平均速率；
+
+（4）系统的压强。
+
+5．（20 分）
+
+分子被约束在 xoy 平面内运动，已知分子速度在\(\left. v_{x} \right.\sim v_{x} + \text{d}v_{x}\)、\(\left. v_{y} \right.\sim v_{y} + \text{d}v_{y}\)内的分子数占总分子数的百分比为
+
+\[\frac{\text{d}N}{N} = \frac{m}{2\pi kT}e^{- \frac{m(v_{x}^{2} + v_{y}^{2})}{2kT}}\text{d}v_{x}\text{d}v_{y}\]
+
+式中\(m\)为分子质量，\(T\)为系统温度，\(k\)为玻尔兹曼常数。试求：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  分子速度的\emph{x}分量在区间\(\left. v_{x} \right.\sim v_{x} + \text{d}v_{x}\)内（\emph{y}分量为任意值）的分子数占总分子数的百分比，并由此求\({\overline{v}}_{x} = ?\)， \(\overline{v_{x}^{2}} = ?\)
+\item
+  分子速率在\(\left. v \right.\sim v + \text{d}v\)内的分子数占总分子数的百分比，并由此求\(\overline{v} = ?\)，\(\overline{v_{}^{2}} = ?\)
+\end{enumerate}
+
+6．（14 分）
+
+一柱型容器底面积为\emph{S}，高度为\emph{H}，内含有\emph{N}个理想气体分子，每个分子的质量为\emph{m}，系统的温度为\(T\)，该容器沿竖直方向放置。考虑到重力的作用，且重力加速度为\emph{g}，试分别求出容器底部和顶部的分子数密度。
+
+积分公式：
+
+\({\int_{}^{}{x^{n}\text{d}x}} = \frac{x^{n + 1}}{n + 1} + C\) （\emph{C}为积分常量）
+
+\({\int_{}^{}{\text{e}^{- \lambda x}\text{d}x}} = - \frac{1}{\lambda}\text{e}^{- \lambda x} + C\) （\emph{C}为积分常量）
+
+\({\int_{0}^{\infty}{\text{e}^{- \lambda x^{2}}\text{d}x}} = \frac{1}{2}\sqrt{\frac{\pi}{\lambda}}\)，\({\int_{0}^{\infty}{\text{e}^{- \lambda x^{2}}x\text{d}x}} = \frac{1}{2\lambda}\)，\({\int_{0}^{\infty}{\text{e}^{- \lambda x^{2}}x^{2}\text{d}x}} = \frac{1}{4\lambda}\sqrt{\frac{\pi}{\lambda}}\)，\({\int_{0}^{\infty}{\text{e}^{- \lambda x^{2}}x^{3}\text{d}x}} = \frac{1}{2\lambda^{2}}\)
+
+\end{document}
