@@ -88,11 +88,11 @@ function fileRow(file) {
   row.append(info, actions);
   return row;
 }
-function appendFiles(list, files, kind) {
-  const limit = kind === '试卷' && !state.q.trim() ? 3 : files.length;
+function appendFiles(list, files) {
+  const limit = !state.q.trim() ? 3 : files.length;
   for (const file of files.slice(0, limit)) list.append(fileRow(file));
   if (files.length <= limit) return;
-  const more = node('details', 'more-exams');
+  const more = node('details', 'more-files');
   const summary = node('summary', '', `展开其余 ${files.length - limit} 份`);
   more.append(summary);
   for (const file of files.slice(limit)) more.append(fileRow(file));
@@ -141,11 +141,11 @@ function renderResults() {
         for (const group of periods) {
           const examGroup = node('section', 'exam-group');
           examGroup.append(node('h4', 'exam-heading', group.period));
-          appendFiles(examGroup, group.files, kind);
+          appendFiles(examGroup, group.files);
           list.append(examGroup);
         }
       } else {
-        appendFiles(list, items, kind);
+        appendFiles(list, items);
       }
       column.append(list); columns.append(column);
     }
