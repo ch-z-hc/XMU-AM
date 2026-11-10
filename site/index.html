@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f7f8fa">
+  <meta name="description" content="厦门大学课程资料：历年试卷、教材与个人笔记。按学期和课程查找、预览与下载。">
+  <title>XMU-AM · 课程资料</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%231d4a78'/%3E%3Cpath d='M10 11h8l2 3 2-3h8v19h-8l-2 2-2-2h-8z' fill='none' stroke='white' stroke-width='2'/%3E%3Cpath d='M20 14v18' stroke='white' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳转到资料列表</a>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="XMU-AM 首页">XMU<span>·</span>AM</a>
+    <a class="repo-link" href="https://github.com/ch-z-hc/XMU-AM" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+  </header>
+  <div class="layout">
+    <aside class="sidebar" aria-label="学期导航">
+      <div class="nav-label">课程目录</div>
+      <nav id="terms" aria-label="学期"></nav>
+      <a class="source-link" href="https://github.com/ch-z-hc/XMU-AM/tree/main/LaTeX%20%E8%AF%95%E5%8D%B7" target="_blank" rel="noopener">LaTeX 试卷源码 <span aria-hidden="true">↗</span></a>
+    </aside>
+    <main id="main">
+      <div class="page-heading"><div><p class="eyebrow">厦门大学</p><h1>课程资料</h1></div><p id="summary" class="summary"></p></div>
+      <form class="search" role="search" id="search-form">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
+        <label class="sr-only" for="query">搜索课程、年份或文件名</label>
+        <input id="query" type="search" placeholder="搜索课程、年份或文件名" autocomplete="off">
+        <kbd aria-hidden="true">/</kbd>
+      </form>
+      <div class="filters">
+        <div id="kinds" class="kind-tabs" role="group" aria-label="资料类型"></div>
+        <label class="course-filter"><span class="sr-only">课程</span><select id="course"><option value="">全部课程</option></select></label>
+      </div>
+      <div class="results-meta"><p id="result-count" role="status" aria-live="polite">正在加载资料…</p><button id="reset" class="text-button" hidden>清除筛选</button></div>
+      <div id="results" aria-busy="true"></div>
+      <noscript><p>请启用 JavaScript 浏览资料，或<a href="https://github.com/ch-z-hc/XMU-AM">访问 GitHub 仓库</a>。</p></noscript>
+      <footer>整理与维护 <a href="https://github.com/ch-z-hc" target="_blank" rel="noopener">chzhc</a></footer>
+    </main>
+  </div>
+  <dialog id="preview" aria-labelledby="preview-title">
+    <div class="preview-toolbar"><h2 id="preview-title"></h2><a id="preview-open" target="_blank" rel="noopener">新窗口打开 ↗</a><a id="preview-download">下载</a><button id="preview-close" aria-label="关闭预览">×</button></div>
+    <iframe id="pdf" title="PDF 预览"></iframe>
+  </dialog>
+</body>
+</html>
