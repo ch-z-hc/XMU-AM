@@ -1,0 +1,40 @@
+\begin{tikzpicture}[x=1cm,y=1cm,line width=.55pt,
+  every node/.style={inner sep=2pt},
+  network/.style={draw,cloud,cloud puffs=10,cloud puff arc=115,aspect=1.5,minimum width=1.6cm,minimum height=1cm},
+  router/.style={draw,ellipse,minimum width=8mm,minimum height=5mm,inner sep=0pt}]
+\node[network] (N1) at (2.4,0) {};
+\node[network] (N4) at (6.2,0) {};
+\node[network] (N3) at (10.4,1.05) {};
+\node[network] (N2) at (10.4,-1.05) {};
+\node[router] (R1) at (4.3,0) {$\times$};
+\node[router] (R3) at (8.3,0) {$\times$};
+\draw (.25,-.12) rectangle (.95,.4);
+\draw (.32,-.05) rectangle (.88,.32);
+\draw (.6,-.12)--(.6,-.28);
+\draw (.15,-.28)--(1.05,-.28);
+\draw (12.45,.93) rectangle (13.15,1.45);
+\draw (12.52,1) rectangle (13.08,1.37);
+\draw (12.8,.93)--(12.8,.77);
+\draw (12.35,.77)--(13.25,.77);
+\draw (12.45,-1.17) rectangle (13.15,-.65);
+\draw (12.52,-1.1) rectangle (13.08,-.73);
+\draw (12.8,-1.17)--(12.8,-1.33);
+\draw (12.35,-1.33)--(13.25,-1.33);
+\draw (.95,0)--(N1.west);
+\draw (N1.east)--(R1.west);
+\draw (R1.east)--(N4.west);
+\draw (N4.east)--(R3.west);
+\draw (R3.north east)--(N3.west);
+\draw (R3.south east)--(N2.west);
+\draw (N3.east)--(12.45,1.05);
+\draw (N2.east)--(12.45,-1.05);
+\node at (2.4,-.8) {N1};
+\node at (6.2,-.8) {N4};
+\node at (10.4,.25) {N3};
+\node at (10.4,-1.85) {N2};
+\node at (4.3,-.55) {R1};
+\node at (8.3,-.55) {R3};
+\node[align=center,anchor=north] at (.6,-.45) {60 台计算机\\PC 1--60};
+\node[align=center,anchor=north] at (12.8,.6) {10 台计算机\\PC 81--90};
+\node[align=center,anchor=north] at (12.8,-1.5) {20 台计算机\\PC 61--80};
+\end{tikzpicture}

@@ -1,0 +1,7 @@
+\providecommand\ExamFontPath{./}
+\setCJKmainfont[Path=\ExamFontPath,BoldFont=STHeiti.ttf]{STSong.ttf}
+\setCJKsansfont[Path=\ExamFontPath,FontIndex=1]{STHeitiMedium.ttc}
+\setCJKfamilyfont{zhhei}[Path=\ExamFontPath,BoldFont=STHeiti.ttf]{STHeiti.ttf}
+\setCJKfamilyfont{zhsong}[Path=\ExamFontPath]{STSong.ttf}
+\providecommand\heiti{\CJKfamily{zhhei}}
+\providecommand\songti{\CJKfamily{zhsong}}

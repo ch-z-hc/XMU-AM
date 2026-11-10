@@ -1,0 +1,93 @@
+\providecommand\ExamFontPath{../../../字体/}
+\documentclass[fontset=exam]{exam-zh}
+\examsetup{page/size=a4paper}
+\title{厦门大学 2021 级期中考试}
+\subject[7em]{计算机组成原理}
+\begin{document}
+\maketitle
+\noindent\makebox[\linewidth][c]{学年学期：2324(1)\quad 考试时间：100 分钟\quad 满分：100 分}\par
+\fancyfoot[C]{第 \thepage 页（共 \pageref*{LastPage} 页）}
+\pdfbookmark[0]{一、计算（30 分）}{section-0-0}
+\section{计算（30 分）}
+\begin{question}[index=1]
+IEEE754 编码表示的单精度浮点数为（BF400000）H，其对应的十进制数为多少？将 \(-20.125\) 表示成 IEEE754 标准单精度浮点数（表示为 8 位十六进制数）。（8 分）
+\end{question}
+\begin{question}[index=2]
+字长为 32 位的浮点数，阶码 8 位（含 1 位阶符）用补码表示，尾数 24 位（含 1 位数符）用规格化补码表示，它所能表示的最大正数，最大负数分别是多少？（6 分）
+\end{question}
+\begin{question}[index=3]
+设 \(X=-0.1011\mathrm{B}\)，\(Y=0.1101\mathrm{B}\)。用加减交替法计算 \(X\div Y\)，结果保留 4 位小数，写出商以及余数的真值。（8 分）
+\end{question}
+\begin{question}[index=4]
+有两个十进制数：\(x=-0.875\times2^1\)，\(y=0.625\times2^2\)，设阶码 2 位，阶符 1 位，数符 1 位，尾数 4 位，按照浮点数加减法的计算方法求 \(z=x-y\) 的二进制浮点规格化结果。（8 分）
+\end{question}
+\pdfbookmark[0]{二、存储器设计（25 分）}{section-0-5}
+\section{存储器设计（25 分）}
+某 8 位计算机存储器按字节寻址，地址空间共 128KB，地址空间分配如下：0～16K 为系统区，由 8K\(\times\)4 的 ROM 组成；地址空间最后 64K 为用户区，由 16K\(\times\)4 的 RAM 芯片组成。\par
+\begin{question}[index=1]
+计算所需的芯片（4 分）
+\end{question}
+\begin{question}[index=2]
+画出地址空间分布图（8 分）
+\end{question}
+\begin{question}[index=3]
+请画出 CPU 与存储器系统的连线，并注明相关的控制信号（13 分）
+\end{question}
+\newpage
+\pdfbookmark[0]{三、Cache（12 分）}{section-1-0}
+\section{Cache（12 分）}
+某计算机的主存地址为 32 位，按字节编址，Cache 有 128 行，采用 4 路组相联映射方式，Cache 行内地址有 6 位。请问：\par
+\begin{question}[index=1]
+主存块的地址标记 Tag（主存组号）有几位？（3 分）
+\end{question}
+\begin{question}[index=2]
+Cache 的容量有多大？（4 分）
+\end{question}
+\begin{question}[index=3]
+主存地址为 09A4E3C0H 的单元被装入 Cache 时，其行号可能为多少？（5 分）
+\end{question}
+\pdfbookmark[0]{四、指令格式（7 分）}{section-1-5}
+\section{指令格式（7 分）}
+指令格式结构如下（其中 \(X\) 表示寻址特征位），分析指令格式及寻址方式的特点。\par
+\begin{center}\begin{tikzpicture}[x=0.995\linewidth,y=1pt]
+\draw (0,0) rectangle (0.23,20);
+\node at (0.115,10) {OP};
+\node[anchor=south west,font=\small] at (0,23) {31};
+\node[anchor=south east,font=\small] at (0.23,23) {26};
+\draw (0.23,0) rectangle (0.38,20);
+\node at (0.305,10) {\(X\)};
+\node[anchor=south west,font=\small] at (0.23,23) {25};
+\node[anchor=south east,font=\small] at (0.38,23) {24};
+\draw (0.38,0) rectangle (0.64,20);
+\node at (0.51,10) {目标寄存器};
+\node[anchor=south west,font=\small] at (0.38,23) {23};
+\node[anchor=south east,font=\small] at (0.64,23) {20};
+\draw (0.64,0) rectangle (1.0,20);
+\node at (0.8200000000000001,10) {20 位地址};
+\node[anchor=south west,font=\small] at (0.64,23) {19};
+\node[anchor=south east,font=\small] at (1.0,23) {0};
+\end{tikzpicture}\end{center}
+\pdfbookmark[0]{五、指令字长（8 分）}{section-1-8}
+\section{指令字长（8 分）}
+某计算机按字节编址，指令字长固定且只有两种指令格式，其中三地址指令 29 条，二地址指令 107 条，每个地址字段为 6 位，则指令字长至少应该是多少位？请简要解释原因，给出计算过程。\par
+\pdfbookmark[0]{六、简答题（18 分）}{section-1-10}
+\section{简答题（18 分）}
+\begin{question}[index=1]
+请说明通过 \([x]_{\text{补}}\) 求 \([-x]_{\text{补}}\) 的方法。
+\end{question}
+\begin{question}[index=2]
+两个同符号的数相加，结果有溢出，其原因是什么？
+\end{question}
+\begin{question}[index=3]
+采用先行进位方式有什么优点？
+\end{question}
+\begin{question}[index=4]
+两个浮点数相加时，比较阶码大小并完成对阶，要采用什么原则？
+\end{question}
+\begin{question}[index=5]
+计算机系统中采用虚拟存储系统的目的是什么？
+\end{question}
+\begin{question}[index=6]
+双译码结构的地址译码器有什么优点？
+\end{question}
+\end{document}

@@ -1,0 +1,12 @@
+\begin{tikzpicture}[x=1cm,y=1cm,every node/.style={inner sep=3pt}]
+\node[draw,rectangle,minimum width=9mm,minimum height=7mm] (H) at (0,0) {H};
+\node[draw,rectangle,minimum width=9mm,minimum height=9mm] (AP) at (4,0) {AP};
+\node[draw,circle,minimum size=9mm] (R) at (8,0) {R};
+\node[draw,cloud,cloud puffs=10,cloud puff arc=120,aspect=2,minimum width=2cm,minimum height=1cm] (I) at (10.5,0) {Internet};
+\draw[dashed,->,line width=.6pt] (H)--(AP);
+\node[draw,minimum width=8mm,minimum height=5mm] at (2,.5) {F};
+\draw (AP)--(R)--(I);
+\node[above] at (6,.1) {00-12-34-56-78-9c};
+\node[below] at (0,-.55) {00-12-34-56-78-9a};
+\node[below] at (4,-.55) {00-12-34-56-78-9b};
+\end{tikzpicture}

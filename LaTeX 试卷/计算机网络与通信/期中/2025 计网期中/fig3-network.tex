@@ -1,0 +1,11 @@
+\begin{tikzpicture}[x=1cm,y=1cm,every node/.style={inner sep=2pt}]
+\node[draw,rectangle,minimum width=1cm,minimum height=.7cm] (A) at (0,0) {主机 A};
+\node[draw,circle,minimum size=9mm] (R) at (6,0) {R};
+\node[draw,rectangle,minimum width=1cm,minimum height=.7cm] (B) at (12,0) {主机 B};
+\draw (A)--node[below]{链路 1}(R)--node[below]{链路 2}(B);
+\node[align=center,above] at (3,.25) {10.2.128.1\\00-21-27-21-51-EE};
+\node[align=center,above] at (9,.25) {101.12.123.15\\00-21-2E-1A-47-5B};
+\node[below] at (6,-.65) {路由器 R};
+\node[align=center,below] at (0,-.65) {IP：10.2.128.100\\MAC：00-15-C5-C1-5E-28};
+\node[align=center,below] at (12,-.65) {IP：64.170.98.32\\MAC：00-68-AE-C2-37-FE};
+\end{tikzpicture}

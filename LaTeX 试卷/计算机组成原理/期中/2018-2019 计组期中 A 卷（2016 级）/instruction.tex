@@ -1,0 +1,25 @@
+\documentclass[tikz,border=0pt]{standalone}
+\usepackage{fontspec,xeCJK}
+\setmainfont[IgnoreFontspecFile,Path=../../../字体/]{NewCM10-Book.otf}
+\setCJKmainfont[Path=../../../字体/]{STSong.ttf}
+\begin{document}
+\begin{tikzpicture}[x=1bp,y=-1bp,line width=.8bp,font=\fontsize{15bp}{17bp}\selectfont]
+\path[use as bounding box] (0,0) rectangle (427,121);
+\draw (12,39) rectangle (415,91);
+\draw (12,65)--(415,65);
+\foreach \x in {104,222,324} {\draw (\x,39)--(\x,65);}
+\node at (58,52) {OP};
+\node at (163,52) {X};
+\node at (273,52) {寄存器 X1};
+\node at (369.5,52) {寄存器 X2};
+\node at (213.5,78) {偏移量（16 位）};
+\node[anchor=south west] at (12,35) {15};
+\node[anchor=south east] at (103,35) {10};
+\node[anchor=south west] at (105,35) {9};
+\node[anchor=south east] at (221,35) {8};
+\node[anchor=south west] at (223,35) {7};
+\node[anchor=south east] at (323,35) {3};
+\node[anchor=south west] at (325,35) {2};
+\node[anchor=south east] at (415,35) {0};
+\end{tikzpicture}
+\end{document}

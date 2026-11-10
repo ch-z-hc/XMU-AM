@@ -1,0 +1,81 @@
+\providecommand\ExamFontPath{../../../字体/}
+\documentclass[fontset=exam]{exam-zh}
+\examsetup{page/size=a4paper}
+\title{厦门大学 2019 级期中考试}
+\subject[7em]{计算机组成原理}
+\begin{document}
+\maketitle
+\noindent\makebox[\linewidth][c]{学年学期：2122-1\quad 考试时间：100 分钟\quad 满分：100 分}\par
+\fancyfoot[C]{第 \thepage 页（共 \pageref*{LastPage} 页）}
+\pdfbookmark[0]{一、计算（27 分）}{section-0-0}
+\section{计算（27 分）}
+\begin{question}[index=1]
+IEEE754 编码表示的单精度浮点数为（BF400000）H，其对应的十进制数为多少？将 \(-20.125\) 表示成 IEEE754 标准单精度浮点数（表示为 8 位十六进制数）。（8 分）
+\end{question}
+\begin{question}[index=2]
+字长为 32 位的浮点数，阶码 8 位（含 1 位阶符）用补码表示，尾数 24 位（含 1 位数符）用规格化补码表示，它所能表示的最大正数，最大负数分别是多少？（6 分）
+\end{question}
+\begin{question}[index=3]
+设 \(X=-0.01011\mathrm{B}\)，\(Y=0.11001\mathrm{B}\)。请采用直接补码乘法计算 \(X\times Y\)，结果保留 5 位小数，并写出积的真值。（5 分）
+\end{question}
+\begin{question}[index=4]
+有两个十进制数：\(x=-0.875\times2^1\)，\(y=0.625\times2^2\)，设阶码 2 位，阶符 1 位，数符 1 位，尾数 4 位，按照浮点数加减法的计算方法求 \(z=x-y\) 的二进制浮点规格化结果。（8 分）
+\end{question}
+\pdfbookmark[0]{二、存储器设计（26 分）}{section-0-5}
+\section{存储器设计（26 分）}
+某 8 位计算机存储器按字节寻址，地址空间共 128KB，地址空间分配如下：0～16K 为系统区，由 8K\(\times\)4 的 ROM 组成；地址空间最后 80K 为用户区，由 16K\(\times\)4 的 RAM 芯片组成。\par
+\begin{question}[index=1]
+计算所需的芯片（4 分）
+\end{question}
+\begin{question}[index=2]
+画出地址空间分布图（8 分）
+\end{question}
+\begin{question}[index=3]
+请画出 CPU 与存储器系统的连线，并注明相关的控制信号（14 分）
+\end{question}
+\newpage
+\pdfbookmark[0]{三、Cache（12 分）}{section-1-0}
+\section{Cache（12 分）}
+某计算机的主存空间为 128M，按字节编址，Cache 有 128 行，采用 4 路组相联映射方式，Cache 行内地址有 6 位。请问：\par
+\begin{question}[index=1]
+主存块的地址标记 Tag 有几位？（3 分）
+\end{question}
+\begin{question}[index=2]
+Cache 的容量有多大？（4 分）
+\end{question}
+\begin{question}[index=3]
+主存地址为 6A4E3C0H 的单元被装入 Cache 时，其行号可能为多少？（5 分）
+\end{question}
+\pdfbookmark[0]{四、求补电路（8 分）}{section-1-5}
+\section{求补电路（8 分）}
+请画出对 2 求补电路\par
+\pdfbookmark[0]{五、简答题（27 分）}{section-1-7}
+\section{简答题（27 分）}
+\begin{question}[index=1]
+请说出一种判断溢出的方法。
+\end{question}
+\begin{question}[index=2]
+采用“加减交替法”运算时，计算过程中，余数为负时，商为多少？后续如何计算？
+\end{question}
+\begin{question}[index=3]
+浮点数相加减时，对阶采用的方法是？
+\end{question}
+\begin{question}[index=4]
+计算机系统中采用虚拟存储系统的目的是什么？
+\end{question}
+\begin{question}[index=5]
+双译码结构的地址译码器有什么优点？
+\end{question}
+\begin{question}[index=6]
+阵列乘法器的“算前求补器”的功能是什么？
+\end{question}
+\begin{question}[index=7]
+交叉存储模式有什么优点和缺点？
+\end{question}
+\begin{question}[index=8]
+段式管理和页式管理各有什么优点？
+\end{question}
+\begin{question}[index=9]
+为什么需要对 DRAM 存储器进行刷新？
+\end{question}
+\end{document}

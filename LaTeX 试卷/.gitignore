@@ -1,0 +1,9 @@
+字体/
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.xdv
+*.fls
+*.fdb_latexmk
+*/期中/*/*.pdf

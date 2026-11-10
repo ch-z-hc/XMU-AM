@@ -1,0 +1,109 @@
+\noindent\makebox[\linewidth][c]{2016 级计算机科学与技术专业\quad 学年学期：18191}\par
+
+\pdfbookmark[0]{一、计算}{section1}
+\section{（17 分）计算}
+\begin{question}[index=1]
+IEEE754 编码表示的单精度浮点数为 $(\mathrm{BF400000})_{\mathrm H}$，其对应的十进制数为多少？（5 分）
+\end{question}
+\begin{question}[index=2]
+设 $X=-0.1011_{\mathrm B}$，$Y=0.1101_{\mathrm B}$。用加减交替法计算 $X\div Y$，结果保留 4 位小数，写出商以及余数的真值。（6 分）
+\end{question}
+\begin{question}[index=3]
+有两个十进制数：$x=-0.875\times 2^1$，$y=0.625\times 2^2$，设阶码 2 位，阶符 1 位，数符 1 位，尾数 4 位，按照浮点数加减法的计算方法求 $z=x-y$ 的二进制浮点规格化结果。（6 分）
+\end{question}
+
+\pdfbookmark[0]{二、存储器}{section2}
+\section{（19 分）}
+某 8 位计算机存储器按字节寻址，地址空间共 128KB，地址空间分配如下：$0\sim 16\mathrm K$ 为系统区，由 $8\mathrm K\times 4$ 的 ROM 组成；地址空间最后 64K 为用户区，由 $16\mathrm K\times 4$ 的 RAM 芯片组成。
+\begin{question}[index=1]
+计算所需的芯片。（2 分）
+\end{question}
+\begin{question}[index=2]
+画出地址空间分布图。（6 分）
+\end{question}
+\begin{question}[index=3]
+请画出 CPU 与存储器系统的连线，并注明相关的控制信号。（11 分）
+\end{question}
+
+\pdfbookmark[0]{三、Cache}{section3}
+\section{（12 分）}
+某计算机的主存地址为 32 位，按字节编址，Cache 有 128 行，采用 4 路组相联映射方式，Cache 块内地址有 6 位。请问：
+\begin{question}[index=1]
+主存块的地址标记 Tag（主存组号）有几位？（4 分）
+\end{question}
+\begin{question}[index=2]
+Cache 的容量多大？（4 分）
+\end{question}
+\begin{question}[index=3]
+主存地址为 $\mathrm{09A4E3C0H}$ 的单元被装入 Cache 时，其行号可能为多少？（4 分）
+\end{question}
+
+\pdfbookmark[0]{四、操作码扩展}{section4}
+\section{（10 分）}
+计算机 A 指令格式包含 6 位操作码字段（OP）和三个 3 位地址字段，采用固定长度编码，共有 60 条指令，OP 字段为：$000000$ 到 $111011$。其后继产品 B 需要增加 32 条指令，与 A 保持兼容，且操作码尽可能短。
+\begin{question}[index=1]
+采用操作码扩展技术为计算机 B 设计指令操作码。（6 分）
+\end{question}
+\begin{question}[index=2]
+求计算机 B 的操作码的平均长度。（4 分）
+\end{question}
+
+\newpage
+\pdfbookmark[0]{五、指令格式与寻址}{section5}
+\section{（15 分）}
+某机器指令格式如下所示。OP 为操作码字段，试分析以下指令格式特点：其中 X 为寻址特征码，$X=00$ 表示不变址，$X=10$ 表示用变址寄存器 X2 进行变址寻址。
+\begin{center}
+\includegraphics[width=0.64\linewidth]{instruction.pdf}
+\end{center}
+\begin{question}[index=1]
+该指令字长是多少？（3 分）
+\end{question}
+\begin{question}[index=2]
+根据寻址特征码 X，最多可设计多少种寻址方式？（4 分）
+\end{question}
+\begin{question}[index=3]
+若某时刻寄存器 $\mathrm{X2}=\mathrm{1122H}$，请问此时指令 $\mathrm{44200010H}$ 和指令 $\mathrm{22440010H}$ 的有效地址分别是多少。（8 分）
+\end{question}
+
+\pdfbookmark[0]{六、微程序}{section6}
+\section{（15 分）}
+\noindent\begin{minipage}[t]{0.64\linewidth}
+\setlength{\parindent}{2em}
+某 CPU 内部结构如图所示，除 A 外还设有 B、C、D 三个寄存器，它们各自的输入和输出端都与 CPU 内部总线相连，并分别受控制信号控制（如 Bin 为寄存器 B 的输入控制，Bout 为寄存器 B 的输出控制），假设 ALU 的结果直接送入 Z 寄存器中，一个 CPU 周期中 CPU 内部总线只能进行一次数据传送。请设计下列两条指令的完整微程序流图，并标明所需的\mbox{控制信号。}
+\par
+\begin{center}
+\begin{tabular}{@{}p{0.23\linewidth}p{0.26\linewidth}p{0.42\linewidth}@{}}
+\toprule
+指令 & 功能 & 说明 \\
+\midrule
+ADD B, C & $(B)+(C)\to B$ & B 加 C 存入 B \\
+SUB A, [D] & $(A)-((D))\to A$ & A 减（以 D 为地址的存储器单元）存入 A \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.33\linewidth}
+\vspace{0pt}\centering
+\includegraphics[width=\linewidth]{cpu.pdf}
+\end{minipage}
+
+\pdfbookmark[0]{七、简答题}{section7}
+\section{（12 分）简答题}
+\begin{question}[index=1]
+将两个二进制数字 A、B 和一个进位输入 C 相加，产生的和输出 S 为多少？（用公式表示）
+\end{question}
+\begin{question}[index=2]
+为什么需要对 DRAM 存储器进行“刷新”操作？
+\end{question}
+\begin{question}[index=3]
+采用“链式查询方式”进行总线总裁时，设备的优先级如何确定？
+\end{question}
+\begin{question}[index=4]
+按照总线仲裁电路的位置不同，仲裁方式分为哪两类？
+\end{question}
+\begin{question}[index=5]
+RISC 的最主要的特点是什么？
+\end{question}
+\begin{question}[index=6]
+程序的“时间局部性”表示什么含义？
+\end{question}
