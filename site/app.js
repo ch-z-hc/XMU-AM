@@ -107,9 +107,10 @@ function renderResults() {
     const columns = node('div', 'course-columns');
     columns.classList.toggle('single-category', Boolean(state.kind));
     for (const kind of state.kind ? [state.kind] : ['试卷', '教材', '笔记']) {
+      const items = group.filter(file => file.kind === kind).sort((a, b) => collator.compare(b.name, a.name));
+      if (!items.length) continue;
       const column = node('section', 'material-column');
       column.append(node('h3', 'column-heading', kind));
-      const items = group.filter(file => file.kind === kind).sort((a, b) => collator.compare(b.name, a.name));
       const list = node('div', 'file-list');
       const periods = kind === '试卷' ? ['期中', '期末', '期次待核'].map(period => ({
         period,
@@ -125,7 +126,6 @@ function renderResults() {
       } else {
         for (const file of items) list.append(fileRow(file));
       }
-      if (!items.length) list.append(node('p', 'column-empty', state.q.trim() ? '暂无匹配资料' : '暂无资料'));
       column.append(list); columns.append(column);
     }
     section.append(heading, columns); fragment.append(section);
