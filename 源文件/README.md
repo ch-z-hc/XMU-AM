@@ -4,4 +4,4 @@ Markdown、文本、Word、演示文稿、配套代码、图片及其他非 PDF 
 
 [LaTeX 试卷](LaTeX%20试卷/) 保存完整排版工程、共享模板与配套题图，编译方法见该目录说明。
 
-可直接阅读的 PDF 位于仓库根目录的各学期课程目录，并在[网页版](https://ch-z-hc.github.io/XMU-AM/)展示。
+可直接阅读的 PDF 位于仓库根目录的各学期课程目录，并在[网页版](https://chzhc.cn/xmu-am/)展示。
