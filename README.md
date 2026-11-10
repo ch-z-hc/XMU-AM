@@ -1,3 +1,5 @@
+本项目收录厦门大学课程资料与试卷。外校试卷不收录；混合来源中无法核实学校的试卷也不作为厦大试卷上传。
+
 <details open>
 <summary><strong>大一上</strong></summary>
 
