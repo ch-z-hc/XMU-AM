@@ -20,8 +20,8 @@ def catalog(tree, revision):
         suffix = Path(path).suffix.lower()
         if item['type'] != 'blob' or len(parts) < 3 or parts[0] not in TERMS or suffix not in EXTENSIONS:
             continue
-        category = parts[2] if len(parts) > 3 else '其他'
-        kind = '试卷' if category in {'期中', '期末', '考试资料（期次待核）'} else ('教材' if category == '教材' else ('笔记' if category == '课件与个人总结' else '其他'))
+        category = parts[2] if len(parts) > 3 else '笔记'
+        kind = '试卷' if category in {'期中', '期末', '考试资料（期次待核）'} else ('教材' if category == '教材' else '笔记')
         # Study aids under exam folders remain discoverable without being labeled exam papers.
         if suffix == '.md' or (kind == '试卷' and any(word in parts[-1] for word in ['笔记', '复习', '速查', '打印规划', '教材索引'])):
             kind = '笔记'

@@ -2,7 +2,7 @@
 
 入口：https://ch-z-hc.github.io/XMU-AM/
 
-`main` 分支更新后，GitHub Actions 自动生成课程目录并部署到 GitHub Pages。目录来自 Git 跟踪的各学期资料；`LaTeX 试卷/` 中重复的 PDF 不重复列出，源码保留仓库入口。
+`main` 分支更新后，GitHub Actions 自动生成课程目录并部署到 GitHub Pages。每门课程按试卷、教材、笔记三栏展示，手机端纵向排列。目录来自 Git 跟踪的各学期资料，“笔记”目录存放个人笔记；`LaTeX 试卷/` 中重复的 PDF 不重复列出，源码保留仓库入口。
 
 16 MiB 以内的 PDF 随站点部署，可直接预览。较大的教材与其他格式通过 GitHub 查看、下载，避免完整资料超过 Pages 的容量限制。文件链接固定到部署对应的提交。
 

@@ -17,7 +17,7 @@ function readState() {
   const params = new URLSearchParams(location.search);
   for (const key of Object.keys(state)) state[key] = params.get(key) || '';
   if (!catalog.terms.includes(state.term)) state.term = '';
-  if (!['', '试卷', '教材', '笔记', '其他'].includes(state.kind)) state.kind = '';
+  if (!['', '试卷', '教材', '笔记'].includes(state.kind)) state.kind = '';
   if (!catalog.files.some(f => f.course === state.course && (!state.term || f.term === state.term))) state.course = '';
 }
 function saveState() {
@@ -36,7 +36,7 @@ function renderNav() {
     $('terms').append(btn);
   }
   $('kinds').replaceChildren();
-  for (const kind of ['', '试卷', '教材', '笔记', '其他']) {
+  for (const kind of ['', '试卷', '教材', '笔记']) {
     const btn = node('button', 'kind', kind || '全部');
     btn.setAttribute('aria-pressed', String(state.kind === kind));
     btn.addEventListener('click', () => { state.kind = kind; update(); });
@@ -66,7 +66,7 @@ function fileRow(file) {
     title = external(node('a', 'file-title', file.name), file.source);
   }
   const meta = node('div', 'file-meta');
-  for (const value of [file.category, file.format, sizeText(file.size)]) meta.append(node('span', '', value));
+  for (const value of [file.category === file.kind ? '' : file.category, file.format, sizeText(file.size)].filter(Boolean)) meta.append(node('span', '', value));
   info.append(title, meta);
   const actions = node('div', 'file-actions');
   if (file.preview) {
@@ -104,11 +104,18 @@ function renderResults() {
     const section = node('section', 'course-group');
     const heading = node('div', 'group-heading');
     heading.append(node('h2', '', group[0].course), node('span', '', `${group[0].term} / ${group.length} 份`));
-    const list = node('div', 'file-list');
-    const order = { '试卷': 0, '教材': 1, '笔记': 2, '其他': 3 };
-    group.sort((a, b) => order[a.kind] - order[b.kind] || collator.compare(b.name, a.name));
-    for (const file of group) list.append(fileRow(file));
-    section.append(heading, list); fragment.append(section);
+    const columns = node('div', 'course-columns');
+    columns.classList.toggle('single-category', Boolean(state.kind));
+    for (const kind of state.kind ? [state.kind] : ['试卷', '教材', '笔记']) {
+      const column = node('section', 'material-column');
+      column.append(node('h3', 'column-heading', kind));
+      const items = group.filter(file => file.kind === kind).sort((a, b) => collator.compare(b.name, a.name));
+      const list = node('div', 'file-list');
+      for (const file of items) list.append(fileRow(file));
+      if (!items.length) list.append(node('p', 'column-empty', state.q.trim() ? '暂无匹配资料' : '暂无资料'));
+      column.append(list); columns.append(column);
+    }
+    section.append(heading, columns); fragment.append(section);
   }
   if (!files.length) {
     const empty = node('div', 'empty');

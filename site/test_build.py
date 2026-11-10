@@ -19,6 +19,13 @@ class CatalogTests(unittest.TestCase):
         self.assertIn('A%20%231%20%2B%20', row['download'])
         self.assertEqual(row['kind'], '教材')
 
+    def test_notes_directory_and_markdown_use_notes_column(self):
+        rows = catalog([self.entry('大一下/热学/笔记/热学 - 复习.pdf'), self.entry('大一上/力学/期末/力学期末.md')], 'revision')
+        self.assertEqual({row['kind'] for row in rows}, {'笔记'})
+        note = next(row for row in rows if row['format'] == 'PDF')
+        self.assertEqual(note['category'], '笔记')
+        self.assertIn('%E7%AC%94%E8%AE%B0', note['source'])
+
     def test_exam_folder_study_aids_are_notes(self):
         row = catalog([self.entry('大三上/UNIX 系统编程/期中/UNIX 期中开卷速查.pdf')], 'revision')[0]
         self.assertEqual(row['kind'], '笔记')
