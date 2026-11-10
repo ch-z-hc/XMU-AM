@@ -55,7 +55,7 @@ function openPreview(file) {
   $('preview').showModal();
 }
 function fileRow(file) {
-  const row = node('div', 'file');
+  const row = node('div', file.kind === '试卷' ? 'file exam-file' : 'file');
   row.innerHTML = fileIcon;
   const info = node('div', 'file-info');
   let title;
@@ -88,6 +88,27 @@ function fileRow(file) {
   row.append(info, actions);
   return row;
 }
+function appendFiles(list, files, kind) {
+  const limit = kind === '试卷' && !state.q.trim() ? 3 : files.length;
+  for (const file of files.slice(0, limit)) list.append(fileRow(file));
+  if (files.length <= limit) return;
+  const more = node('details', 'more-exams');
+  const summary = node('summary', '', `展开其余 ${files.length - limit} 份`);
+  more.append(summary);
+  for (const file of files.slice(limit)) more.append(fileRow(file));
+  more.addEventListener('toggle', () => {
+    summary.textContent = more.open ? '收起' : `展开其余 ${files.length - limit} 份`;
+  });
+  list.append(more);
+}
+function compareFiles(a, b) {
+  if (a.kind === '试卷' && b.kind === '试卷') {
+    const year = file => Number(file.name.match(/^\d{4}/)?.[0] || 0);
+    const difference = year(b) - year(a);
+    if (difference) return difference;
+  }
+  return collator.compare(b.name, a.name);
+}
 function renderResults() {
   const tokens = state.q.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
   const files = catalog.files.filter(f => (!state.term || f.term === state.term) && (!state.course || f.course === state.course) && (!state.kind || f.kind === state.kind) && tokens.every(t => `${f.name} ${f.course} ${f.term} ${f.category} ${f.format}`.toLocaleLowerCase().includes(t)));
@@ -107,7 +128,7 @@ function renderResults() {
     const columns = node('div', 'course-columns');
     columns.classList.toggle('single-category', Boolean(state.kind));
     for (const kind of state.kind ? [state.kind] : ['试卷', '教材', '笔记']) {
-      const items = group.filter(file => file.kind === kind).sort((a, b) => collator.compare(b.name, a.name));
+      const items = group.filter(file => file.kind === kind).sort(compareFiles);
       if (!items.length) continue;
       const column = node('section', 'material-column');
       column.append(node('h3', 'column-heading', kind));
@@ -120,11 +141,11 @@ function renderResults() {
         for (const group of periods) {
           const examGroup = node('section', 'exam-group');
           examGroup.append(node('h4', 'exam-heading', group.period));
-          for (const file of group.files) examGroup.append(fileRow(file));
+          appendFiles(examGroup, group.files, kind);
           list.append(examGroup);
         }
       } else {
-        for (const file of items) list.append(fileRow(file));
+        appendFiles(list, items, kind);
       }
       column.append(list); columns.append(column);
     }
