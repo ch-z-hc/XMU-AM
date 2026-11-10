@@ -19,15 +19,26 @@ class CatalogTests(unittest.TestCase):
         self.assertIn('A%20%231%20%2B%20', row['download'])
         self.assertEqual(row['kind'], '教材')
 
-    def test_notes_directory_and_markdown_use_notes_column(self):
-        rows = catalog([self.entry('大一下/热学/笔记/热学 - 复习.pdf'), self.entry('大一上/力学/期末/力学期末.md')], 'revision')
+    def test_reviewed_mechanics_notes_share_classification(self):
+        rows = catalog([self.entry('大一上/力学/笔记/力学期末.pdf'), self.entry('大一上/力学/笔记/力学期末.md')], 'revision')
         self.assertEqual({row['kind'] for row in rows}, {'笔记'})
         note = next(row for row in rows if row['format'] == 'PDF')
         self.assertEqual(note['category'], '笔记')
         self.assertIn('%E7%AC%94%E8%AE%B0', note['source'])
 
-    def test_exam_folder_study_aids_are_notes(self):
-        row = catalog([self.entry('大三上/UNIX 系统编程/期中/UNIX 期中开卷速查.pdf')], 'revision')[0]
+    def test_exam_recollections_are_exams_in_both_formats(self):
+        for stem in ['大一上/力学/期中/2024 力学期中', '大一下/热学/期中/2024-2025 热学期中']:
+            with self.subTest(stem=stem):
+                rows = catalog([self.entry(stem + '.md'), self.entry(stem + '.pdf')], 'revision')
+                self.assertEqual([row['kind'] for row in rows], ['试卷', '试卷'])
+                self.assertEqual({row['category'] for row in rows}, {'期中'})
+
+    def test_reference_excerpts_with_test_in_name_remain_textbook_materials(self):
+        row = catalog([self.entry('大一下/大学英语/教材/test2（the Magi & sophistication ).docx')], 'revision')[0]
+        self.assertEqual(row['kind'], '教材')
+
+    def test_reviewed_unix_study_aid_is_a_note(self):
+        row = catalog([self.entry('大三上/UNIX 系统编程/笔记/UNIX 期中开卷速查.pdf')], 'revision')[0]
         self.assertEqual(row['kind'], '笔记')
 
 

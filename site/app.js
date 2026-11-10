@@ -111,7 +111,20 @@ function renderResults() {
       column.append(node('h3', 'column-heading', kind));
       const items = group.filter(file => file.kind === kind).sort((a, b) => collator.compare(b.name, a.name));
       const list = node('div', 'file-list');
-      for (const file of items) list.append(fileRow(file));
+      const periods = kind === '试卷' ? ['期中', '期末', '期次待核'].map(period => ({
+        period,
+        files: items.filter(file => (['期中', '期末'].includes(file.category) ? file.category : '期次待核') === period),
+      })).filter(group => group.files.length) : [];
+      if (periods.length > 1) {
+        for (const group of periods) {
+          const examGroup = node('section', 'exam-group');
+          examGroup.append(node('h4', 'exam-heading', group.period));
+          for (const file of group.files) examGroup.append(fileRow(file));
+          list.append(examGroup);
+        }
+      } else {
+        for (const file of items) list.append(fileRow(file));
+      }
       if (!items.length) list.append(node('p', 'column-empty', state.q.trim() ? '暂无匹配资料' : '暂无资料'));
       column.append(list); columns.append(column);
     }

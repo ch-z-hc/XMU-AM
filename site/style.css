@@ -20,3 +20,6 @@ dialog{width:calc(100vw - 64px);max-width:1280px;height:calc(100dvh - 64px);padd
 .single-category .file-actions{margin-left:auto}
 @media(max-width:1000px){.course-columns{grid-template-columns:1fr}.material-column .file{display:flex;align-items:center}.material-column .file-actions{margin-left:auto}}
 @media(max-width:720px){.course-columns{gap:12px}.column-heading{padding:13px 14px}.material-column .file{padding:14px 12px}.material-column .file-actions{gap:6px}.course-group{margin-bottom:30px}}
+
+.exam-heading{margin:0;padding:10px 15px;font-size:12px;font-weight:500;color:var(--muted);background:#f7f9fc;border-bottom:1px solid #edf0f4}
+.exam-group+.exam-group{border-top:1px solid var(--line)}

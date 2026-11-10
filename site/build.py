@@ -22,9 +22,7 @@ def catalog(tree, revision):
             continue
         category = parts[2] if len(parts) > 3 else '笔记'
         kind = '试卷' if category in {'期中', '期末', '考试资料（期次待核）'} else ('教材' if category == '教材' else '笔记')
-        # Study aids under exam folders remain discoverable without being labeled exam papers.
-        if suffix == '.md' or (kind == '试卷' and any(word in parts[-1] for word in ['笔记', '复习', '速查', '打印规划', '教材索引'])):
-            kind = '笔记'
+        # Directories reflect content review; format and title do not determine kind.
         local = suffix == '.pdf' and item['size'] <= LOCAL_LIMIT
         url_path = quote(path, safe='/')
         local_path = f"files/{item['sha']}{suffix}" if local else None
