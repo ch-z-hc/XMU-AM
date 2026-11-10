@@ -84,8 +84,6 @@ select { max-width: 240px; width: 100%; background: white; color: var(--muted); 
 .download svg { width: 18px; height: 18px; }
 .exam-heading { font-size: 13px; font-weight: 400; color: var(--muted); margin: 0; padding: 8px 0 2px; }
 .exam-group + .exam-group { margin-top: 8px; border-top: 1px solid var(--line); padding-top: 8px; }
-.more-files summary { cursor: pointer; font-size: 13px; color: var(--blue); padding: 10px 0; min-height: 44px; }
-.more-files[open] summary { border-bottom: 1px solid #0000000a; }
 .empty { text-align: center; padding: 56px 16px; border-block: 1px solid var(--line); }
 .empty h2 { font-size: 20px; margin: 0 0 10px; }
 .empty p { font-size: 14px; color: var(--muted); margin: 0; }

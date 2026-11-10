@@ -89,17 +89,7 @@ function fileRow(file) {
   return row;
 }
 function appendFiles(list, files) {
-  const limit = !state.q.trim() ? 3 : files.length;
-  for (const file of files.slice(0, limit)) list.append(fileRow(file));
-  if (files.length <= limit) return;
-  const more = node('details', 'more-files');
-  const summary = node('summary', '', `展开其余 ${files.length - limit} 份`);
-  more.append(summary);
-  for (const file of files.slice(limit)) more.append(fileRow(file));
-  more.addEventListener('toggle', () => {
-    summary.textContent = more.open ? '收起' : `展开其余 ${files.length - limit} 份`;
-  });
-  list.append(more);
+  for (const file of files) list.append(fileRow(file));
 }
 function compareFiles(a, b) {
   if (a.kind === '试卷' && b.kind === '试卷') {
