@@ -1,0 +1,84 @@
+\providecommand\ExamFontPath{../../../字体/}
+\documentclass[fontset=exam]{exam-zh}
+\usepackage{bookmark}
+\examsetup{page/size=a4paper}
+\title{2010 年期中考试}
+\subject[4em]{计算方法}
+\begin{document}
+\maketitle
+\fancyfoot[C]{第 \thepage 页（共 \pageref*{LastPage} 页）}
+\pdfbookmark[1]{试题}{questions}
+
+% 原件第 1 页。
+\begin{question}[index=1]
+已知下列数值表，求符合表值的插值多项式，并给出插值余项的表达式。
+\begin{center}
+\begin{tabular}{c|ccc}
+$x_i$ & $0$ & $1$ & $2$ \\
+$y_i$ & $2$ & $1$ & $2$ \\
+$y_i'$ & $-2$ & $-1$ & \\
+$y_i''$ & $-10$ & &
+\end{tabular}
+\end{center}
+\end{question}
+
+% 原件第 2 页；仅保留待证等式，不收录其后的因式分解解题步骤。
+\begin{question}[index=2]
+若 $f(x)=a_0x^n+a_1x^{n-1}+\cdots+a_{n-1}x+a_n$ 有互不相同的 $n$ 个实根
+$x_1,x_2,\ldots,x_n$，试证明：
+\[
+\sum_{j=1}^{n}\frac{x_j^k}{f'(x_j)}=
+\begin{cases}
+0, & 0\leq k<n-1,\\
+a_0^{-1}, & k=n-1.
+\end{cases}
+\]
+\end{question}
+
+% 原件第 3 页。
+\begin{question}[index=3]
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$x_i$ & $1$ & $2$ & $3$ & $4$ \\ \hline
+$y_i$ & $4$ & $10$ & $18$ & $26$ \\ \hline
+\end{tabular}
+\par
+用 $y=c_0+c_1x+c_2x^2$ 拟合上述数据，采用正交多项式方法求解。
+\end{question}
+
+% 原件第 4 页。
+\begin{question}[index=4]
+求 $f(x)=x^4+3x^3-1$ 在区间 $[0,1]$ 上的三次最佳一致逼近多项式。
+\end{question}
+
+% 原件第 5 页。
+\begin{question}[index=5]
+确定求积公式
+\[
+\int_{x_0}^{x_1}(x-x_0)f(x)\,\mathrm{d}x
+=h^2[Af(x_0)+Bf(x_1)]+h^3[Cf'(x_0)+Df'(x_1)]+R(f)
+\]
+中的系数 $A,B,C,D$，使其代数精度尽量高，并给出 $R(f)$ 的表达式。
+\end{question}
+
+% 原件第 6 页。
+\begin{question}[index=6]
+$\{\varphi_n(x)\}$ 是 $[a,b]$ 上带权 $\rho(x)$ 的正交多项式序列，
+$x_i\ (i=0,1,\ldots,n)$ 是 $\varphi_{n+1}(x)$ 的零点，
+$l_i(x)\ (i=0,1,\ldots,n)$ 是以 $\{x_i\}$ 为节点的拉格朗日插值基函数。
+\[
+\int_a^b\rho(x)f(x)\,\mathrm{d}x\approx\sum_{k=0}^{n}A_kf(x_k)
+\]
+为高斯求积公式。证明：
+\[
+\sum_{k=0}^{n}\int_a^b\rho(x)l_k^2(x)\,\mathrm{d}x
+=\int_a^b\rho(x)\,\mathrm{d}x.
+\]
+\end{question}
+
+% 原件第 7 页。
+\begin{question}[index=7]
+用龙贝格方法计算 $\displaystyle\int_{0.3}^{0.8}\frac{x^3+\sin x}{x}\,\mathrm{d}x$，
+使其误差不超过 $0.1\times10^{-4}$。
+\end{question}
+\end{document}
