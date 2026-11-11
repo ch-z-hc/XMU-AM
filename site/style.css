@@ -26,9 +26,6 @@ button, a, input, select, summary { -webkit-tap-highlight-color: transparent; }
 .skip:focus { top: 8px; }
 .topbar { height: 64px; position: sticky; top: 0; z-index: 10; background: white; border-bottom: 1px solid var(--line); box-shadow: 0 2px 12px #2121210a; }
 .topbar-inner { max-width: 1200px; height: 100%; padding: 0 24px; margin: auto; display: flex; align-items: center; gap: 20px; }
-.home-link { display: inline-flex; align-items: center; min-height: 44px; padding: 4px; }
-.home-link img { display: block; height: 30px; width: auto; }
-.nav-divider { height: 22px; width: 1px; background: var(--line); flex: none; }
 .brand { font-size: 17px; font-weight: 600; color: var(--ink); }
 .repo-link { margin-left: auto; font-size: 13px; color: var(--muted); padding: 10px 0; }
 .repo-link span { margin-left: 6px; }

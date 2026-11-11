@@ -25,8 +25,8 @@ python3 site/build.py --tree /path/to/tree.json --preview
 
 ## 自托管发布
 
-从对应提交的成功构建中下载名为 `course-library` 的 artifact，解压后将 HTML、CSS、JavaScript、`catalog.json` 和 `files/` 一并同步到独立静态目录。资料和页面资产使用相对路径；主站 logo 和完整字体使用根路径 `/assets/logo.svg`、`/guestbook/fonts.css`，本地独立预览需映射这些共享资源。可部署在 `/xmu-am/` 等子路径下；静态服务器应将不带末尾斜杠的入口重定向到带斜杠版本，并支持 PDF Range 请求。
+从对应提交的成功构建中下载名为 `course-library` 的 artifact，解压后将 HTML、CSS、JavaScript、`catalog.json` 和 `files/` 一并同步到独立静态目录。资料和页面资产使用相对路径；浏览器图标和完整字体使用根路径 `/assets/logo.svg`、`/guestbook/fonts.css`，本地独立预览需映射这些共享资源。可部署在 `/xmu-am/` 等子路径下；静态服务器应将不带末尾斜杠的入口重定向到带斜杠版本，并支持 PDF Range 请求。
 
 只部署构建产物，不复制整个仓库；不要使用 `--preview` 生成的软链接目录。大于 16 MiB 的 PDF 继续通过 GitHub 获取，不占用自托管站点空间。独立部署目录应位于博客发布目录之外，避免博客更新时被清理。
 
-界面字体通过主站完整共享接口 `https://chzhc.cn/guestbook/fonts.css` 加载：中文霞鹜文楷，英文和数字 Maple Mono；不使用博客构建裁剪版。顶部 logo 返回主站，搜索、学期与类型筛选、PDF 预览及下载保持可用。
+界面字体通过主站完整共享接口 `https://chzhc.cn/guestbook/fonts.css` 加载：中文霞鹜文楷，英文和数字 Maple Mono；不使用博客构建裁剪版。搜索、学期与类型筛选、PDF 预览及下载保持可用。
