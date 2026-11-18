@@ -54,7 +54,7 @@ function openPreview(file) {
   $('pdf').src = `${file.preview}#view=FitH`;
   $('preview').showModal();
 }
-function fileRow(file) {
+function fileRow(file, groupLabel) {
   const row = node('div', file.kind === '试卷' ? 'file exam-file' : 'file');
   row.innerHTML = fileIcon;
   const info = node('div', 'file-info');
@@ -66,7 +66,7 @@ function fileRow(file) {
     title = external(node('a', 'file-title', file.name), file.source);
   }
   const meta = node('div', 'file-meta');
-  for (const value of [file.category === file.kind ? '' : file.category, file.format, sizeText(file.size)].filter(Boolean)) meta.append(node('span', '', value));
+  for (const value of [[file.kind, groupLabel].includes(file.category) ? '' : file.category, file.format, sizeText(file.size)].filter(Boolean)) meta.append(node('span', '', value));
   info.append(title, meta);
   const actions = node('div', 'file-actions');
   if (file.preview) {
@@ -88,8 +88,8 @@ function fileRow(file) {
   row.append(info, actions);
   return row;
 }
-function appendFiles(list, files) {
-  for (const file of files) list.append(fileRow(file));
+function appendFiles(list, files, groupLabel = '') {
+  for (const file of files) list.append(fileRow(file, groupLabel));
 }
 function compareFiles(a, b) {
   if (a.kind === '试卷' && b.kind === '试卷') {
@@ -137,7 +137,7 @@ function renderResults() {
         for (const group of periods) {
           const examGroup = node('section', 'exam-group');
           examGroup.append(node('h4', 'exam-heading', group.period));
-          appendFiles(examGroup, group.files);
+          appendFiles(examGroup, group.files, group.period);
           list.append(examGroup);
         }
       } else {
